@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AutoClicker</string>
+    <string name="start_clicking">开始点击</string>
+    <string name="stop_clicking">停止点击</string>
+    <string name="click_interval">点击间隔(毫秒)</string>
+    <string name="click_count">点击次数(0为无限)</string>
+    <string name="settings">设置</string>
+    <string name="enable_floating">启用悬浮窗</string>
+    <string name="permission_needed">需要悬浮窗权限</string>
+    <string name="grant_permission">前往设置</string>
+</resources>
