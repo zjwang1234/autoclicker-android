@@ -26,19 +26,19 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Check project structure
+    - name: Build with Gradle (full output)
       run: |
-        ls -la
-        ls -la app/src/main/res/
+        export GRADLE_OPTS="-Xmx2048m"
+        ./gradlew assembleDebug 2>&1
 
-    - name: Build with Gradle
-      run: ./gradlew assembleDebug --info 2>&1 | tail -100
-
-    - name: Check build output
-      run: ls -la app/build/outputs/apk/debug/ 2>&1 || echo "No APK found"
+    - name: List build outputs
+      run: |
+        ls -la app/build/outputs/apk/debug/ 2>&1 || echo "No APK found"
+        ls -la app/build/outputs/apk/ 2>&1 || echo "No APK directory"
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: autoclicker-app
         path: app/build/outputs/apk/debug/app-debug.apk
+      continue-on-error: true
