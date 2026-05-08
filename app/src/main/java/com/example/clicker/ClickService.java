@@ -82,7 +82,7 @@ public class ClickService extends Service {
         Notification notification = new NotificationCompat.Builder(this, channelId)
                 .setContentTitle("AutoClicker")
                 .setContentText("点击器运行中")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
                 .setContentIntent(pendingIntent)
                 .build();
 
